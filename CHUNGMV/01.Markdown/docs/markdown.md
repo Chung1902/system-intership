@@ -1,0 +1,2 @@
+# MARKDOWN
+Markdown là một ngôn ngữ đánh dấu nhẹ (lightweight markup language), được thiết kế để viết và định dạng văn bản một cách đơn giản, dễ đọc, và dễ chuyển đổi sang HTML hoặc các định dạng khác.
