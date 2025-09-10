@@ -87,7 +87,6 @@ Cú pháp
 ![alt text](image.png)
 ```
 Kết quả
-
 ![alt text](image.png)
 ### 3.5. Trích dẫn và code
 - Trích dẫn
