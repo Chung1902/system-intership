@@ -88,7 +88,8 @@ Cú pháp
 ```
 Kết quả
 
-![alt text](image.png)
+![alt text](../images/image.jpg)
+
 ### 3.5. Trích dẫn và code
 - Trích dẫn
 

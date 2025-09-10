@@ -22,5 +22,5 @@ IPv5 Là giao thức thử nghiệm có tên gọi Internet Stream Protocol (ST)
 > Tóm lại: Tất cả các giao thức là phiên bản thử nghiệm không bao giờ triển khai
 ## III. Cấu trúc của IPv4
 Về cấu tạo, địa chỉ IPv4 sẽ có 32 bit và được biểu diễn thành một dãy số nhị phân và chia thành 4 cụm. Mỗi cụm như vậy sẽ gọi là octet. Mỗi octet sẽ là 8 bit và chúng được ngăn cách bằng dấu chấm `.`
-![alt text](image.png)
+![alt text](../images/image.jpg)
 ## IV. Các thành phần của IPv4
