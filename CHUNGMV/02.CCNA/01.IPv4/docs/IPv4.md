@@ -118,10 +118,33 @@ Sự khác biệt chính giữa địa chỉ IP công cộng và riêng tư là 
 |Loại|Địa chỉ IP Public|Địa chỉ IP Private|
 |-------------|--------------------------------|-----------------------------------------|
 |Phạm vi|Toàn cầu|Cục bộ|
-|liên lạc|Giao tiếp qua mạng|Giao tiếp mạng riêng|
+|Liên lạc|Giao tiếp qua mạng|Giao tiếp mạng riêng|
 |Nguồn gốc|Được chỉ định bởi ISP|Được chỉ định bởi ISP|
 |Phạm vi dải IP|Bất kỳ IP nào không nằm trong dải địa chỉ IP riêng|Bất kỳ địa chỉ nào trong các phạm vi sau:<br>-10.0.0.0 – 10.255.255.255 <br>-172.16.0.0 – 172.31.255.255<br>-192.168.0.0 – 192.168.255.255|
 |Bảo mật|IP công cộng yêu cầu các biện pháp bảo mật bổ sung vì chúng dễ bị tấn công.|IP riêng được bảo mật.|
+## VII. Cách chia địa chỉ IPv4
+**Địa chỉ IPv4** = 32 bit → chia thành 2 phần:
+- **Network**: định danh mạng.
+- **Host**:định danh máy trong mạng.
 
+**Subnet mask** cho biết bao nhiêu bit dành cho network.
+- Ví dụ: /24 = 255.255.255.0 = 24 bit cho Network, 8 bit cho Host.
+### Công thức tính toán
+- **Số subnet** = 2^s (s = số bit mượn thêm từ phần host để chia mạng).
 
+- **Số host khả dụng mỗi subnet++ = 2^h – 2 (h = số bit còn lại cho host; trừ 2 vì có Network + Broadcast).
+
+**Ví dụ minh hoạ**:Chia nhỏ `192.168.1.0/24` thành 4 subnet
+
+- Muốn có 4 subnet → cần 2^s ≥ 4 → mượn 2 bit từ phần host.
+- /24 + 2 = /26 → Subnet mask = 255.255.255.192.
+- Mỗi subnet có: 2^6 – 2 = 62 host khả dụng.
+
+Các subnet:
+1. 192.168.1.0/26 → Host: 192.168.1.1 – 192.168.1.62 → Broadcast: 192.168.1.63
+2. 192.168.1.64/26 → Host: 192.168.1.65 – 192.168.1.126 → Broadcast: 192.168.1.127
+3. 192.168.1.128/26 → Host: 192.168.1.129 – 192.168.1.190 → Broadcast: 192.168.1.191
+4. 192.168.1.192/26 → Host: 192.168.1.193 – 192.168.1.254 → Broadcast: 192.168.1.255
+
+## VIII. Phân biệt multicast và broadcast
 
