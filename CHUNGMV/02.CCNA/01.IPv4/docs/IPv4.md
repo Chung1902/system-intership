@@ -116,13 +116,12 @@ Tổ chức IANA (Internet Assigned Numbers Authority) đã quy định các d�
 Sự khác biệt chính giữa địa chỉ IP công cộng và riêng tư là IP công cộng có thể được nhìn thấy bởi các thiết bị Internet khác, trong khi IP riêng tư thì không. Do đó, địa chỉ IP công cộng được sử dụng để tương tác và liên lạc trực tuyến, trong khi địa chỉ IP riêng hoạt động trong mạng cục bộ.
 
 |Loại|Địa chỉ IP Public|Địa chỉ IP Private|
-|---|-----------------|------------------|
+|-------------|--------------------------------|-----------------------------------------|
 |Phạm vi|Toàn cầu|Cục bộ|
 |liên lạc|Giao tiếp qua mạng|Giao tiếp mạng riêng|
 |Nguồn gốc|Được chỉ định bởi ISP|Được chỉ định bởi ISP|
-|Phạm vi dải IP|Bất kỳ IP nào không nằm trong dải địa chỉ IP riêng|Bất kỳ địa chỉ nào trong các phạm vi sau:
-10.0.0.0 – 10.255.255.255;
-172.16.0.0 – 172.31.255.255;
-192.168.0.0 – 192.168.255.255|
+|Phạm vi dải IP|Bất kỳ IP nào không nằm trong dải địa chỉ IP riêng|Bất kỳ địa chỉ nào trong các phạm vi sau:<br>-10.0.0.0 – 10.255.255.255 <br>-172.16.0.0 – 172.31.255.255<br>-192.168.0.0 – 192.168.255.255|
+|Bảo mật|IP công cộng yêu cầu các biện pháp bảo mật bổ sung vì chúng dễ bị tấn công.|IP riêng được bảo mật.|
+
 
 
