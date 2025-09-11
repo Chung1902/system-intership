@@ -100,3 +100,29 @@ Lớp D từ `224` đến `239`.
 
 Lớp E từ `240` đến `255`.
 ## VI. Phân biệt IP Public và IP Private
+### 1. IP Public
+IP Public `(hay địa chỉ IP công cộng)` là **địa chỉ IP duy nhất được nhà cung cấp dịch vụ Internet (ISP) gán cho thiết bị của bạn, cho phép thiết bị đó kết nối trực tiếp với Internet toàn cầu và giao tiếp với các máy chủ khác trên thế giới**. Địa chỉ IP Public đóng vai trò như "địa chỉ nhà" của thiết bị trên mạng Internet, giúp các thiết bị khác xác định và kết nối với nó. 
+### 2. IP Private
+
+IP Private `(hay còn gọi là địa chỉ IP riêng)` là địa chỉ IP được sử dụng chỉ trong phạm vi một mạng nội bộ (LAN) như gia đình, văn phòng, hoặc trường học, giúp các thiết bị trong cùng mạng đó giao tiếp với nhau.
+
+**Dải địa chỉ IP Private**
+
+Tổ chức IANA (Internet Assigned Numbers Authority) đã quy định các dải IP Private, bao gồm:
+- 10.0.0.0 – 10.255.255.255 (10.0.0.0/8)
+- 172.16.0.0 – 172.31.255.255 (172.16.0.0/12)
+- 192.168.0.0 – 192.168.255.255 (192.168.0.0/16) 
+## 3. Sự khác biệt giữa IP Public và IP Private
+Sự khác biệt chính giữa địa chỉ IP công cộng và riêng tư là IP công cộng có thể được nhìn thấy bởi các thiết bị Internet khác, trong khi IP riêng tư thì không. Do đó, địa chỉ IP công cộng được sử dụng để tương tác và liên lạc trực tuyến, trong khi địa chỉ IP riêng hoạt động trong mạng cục bộ.
+
+|Loại|Địa chỉ IP Public|Địa chỉ IP Private|
+|---|-----------------|------------------|
+|Phạm vi|Toàn cầu|Cục bộ|
+|liên lạc|Giao tiếp qua mạng|Giao tiếp mạng riêng|
+|Nguồn gốc|Được chỉ định bởi ISP|Được chỉ định bởi ISP|
+|Phạm vi dải IP|Bất kỳ IP nào không nằm trong dải địa chỉ IP riêng|Bất kỳ địa chỉ nào trong các phạm vi sau:
+10.0.0.0 – 10.255.255.255;
+172.16.0.0 – 172.31.255.255;
+192.168.0.0 – 192.168.255.255|
+
+
