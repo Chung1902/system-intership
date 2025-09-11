@@ -68,6 +68,7 @@ Chứa các thông tin điều khiển:
 Dựa vào cách chọn địa chỉ mạng mà địa chỉ IP được phân thành 5 lớp A, B, C, D, E. Đặc điểm của các lớp như sau:
 ## Lớp A
 ![alt text](../images/class_A.jpg)
+
 Địa chỉ lớp A có phần mạng là 8 bit đầu và phần host là 24 bit sau. Bit đầu tiên của phần mạng luôn là 0.
 
 Lớp A sẽ có các địa chỉ mạng từ `1.0.0.0`đến `126.0.0.0` và mỗi mạng sẽ có 224 địa chỉ host (loại trừ địa chỉ mạng và địa chỉ broadcast).
@@ -75,11 +76,13 @@ Lớp A sẽ có các địa chỉ mạng từ `1.0.0.0`đến `126.0.0.0` và 
 Mạng loopback sẽ là `127.0.0.0`.
 ## Lớp B
 ![alt text](../images/class_B.jpg)
+
 Địa chỉ lớp B có phần mạng là 16 bit đầu và phần host là 16 bit sau. 2 bit đầu tiên của phần mạng luôn là 1.0.
 
 Lớp B sẽ có các địa chỉ mạng từ `128.0.0.0` đến `191.255.0.0` và mỗi mạng sẽ có 214 địa chỉ host (loại trừ địa chỉ mạng và địa chỉ broadcast).
 ## Lớp C
 ![alt text](../images/class_C.jpg)
+
 Địa chỉ lớp C có phần mạng là 24 bit đầu và phần host là 8 bit sau. 3 bit đầu tiên của phần mạng luôn là `1.1.0`.
 
 Lớp C sẽ có các địa chỉ mạng từ `192.0.0.0` đến `223.255.255.0` và mỗi mạng sẽ có 26 địa chỉ host (loại trừ địa chỉ mạng và địa chỉ broadcast).
