@@ -147,4 +147,46 @@ Các subnet:
 4. 192.168.1.192/26 → Host: 192.168.1.193 – 192.168.1.254 → Broadcast: 192.168.1.255
 
 ## VIII. Phân biệt multicast và broadcast
+### 1. Địa chỉ Broadcast
+Địa chỉ Broadcast đại diện cho tất cả thiết bị trong một mạng LAN. Tức là các khung frames được gửi đến địa chỉ quảng bá sẽ được chuyển tiếp tới tất cả các thiết bị trong mạng LAN. Địa chỉ quảng bá có giá trị FFFF.FFFF.FFFF (tất cả đều là địa chỉ nhị phân). Bộ chuyển mạch sẽ gửi các Frames ra tất cả các cổng ngoại trừ cổng nhận.
 
+Địa chỉ Broadcast thường được sử dụng trong các ứng dụng yêu cầu DHCP hay ARP như truyền hình để phát tín hiệu âm thanh hoặc video.
+
+![alt text](../images/Broadcast.jpg)
+### 2. Địa chỉ Multicast
+**Địa chỉ Multicast** đại diện cho một nhóm thiết bị mạng LAN. Một khung được gửi đến địa chỉ Multicast sẽ được chuyển đến 1 nhóm thiết bị trong mạng LAN. Các khung multicast có giá trị là 1 trong bit có trọng số nhỏ nhất của octet đầu tiên của địa chỉ đích. Điều này giúp bộ chuyển mạch Switch phân biệt được địa chỉ unicast và multicast.
+
+Một ví dụ về địa chỉ multicast Ethernet sẽ là 01:00:0C:CC:CC:CC , là địa chỉ được CDP (Cisco Discovery Protocol) sử dụng. Loại địa chỉ này thường được ứng dụng trong cuộc gọi Video, phát live trực tuyến, hoặc chơi game online,…
+![alt text](../images/Multicast.jpg)
+### Sự khác biệt giữa 2 địa chỉ Broadcast và  Địa chỉ Multicast
+|**Tính năng**|**Broadcast**|**Multicast**|
+|-------------|-------------|-------------|
+|Khái niệm|một tin nhắn được gửi từ một người gửi đến tất cả người nhận.|tin nhắn được gửi từ một người gửi đến một nhóm người nhận|
+|Địa chỉ|Sử dụng địa chỉ quảng bá Broadcast đặc biệt|	Sử dụng địa chỉ Multicast đặc biệt|
+|Lưu lượng mạng|Tạo ra lượng lưu lượng mạng nhiều nhất|Tạo lưu lượng mạng vừa phải|
+|Bảo mật|Kém an toàn hơn vì dữ liệu được gửi đến tất cả các thiết bị trong mạng|Bảo mật vừa phải vì dữ liệu được gửi đến một nhóm thiết bị cụ thể|
+|Sử dụng băng thông|Cao|Vừa phải|
+|Độ trễ|Cao|Vừa phải|
+## IX. Subnet, Subnet mask, Prefix
+### 1. Subnet
+**Subnet** (Mạng con) là một phần nhỏ được tách ra từ mạng IP lớn bằng cách dùng Subnet Mask. Mục đíc nhằm quản lý địa chỉ IP hiệu quả hơn, giảm lãng phí, tăng tính bảo mật và hiệu suất.
+
+Mỗi **Subnet** có 3 phần:
+
+**Network Address**: định danh mạng (không gán cho host).
+
+Ví dụ: `192.168.1.0`
+
+**Host Range**: dải địa chỉ dùng cho máy tính, server, router…
+
+Ví dụ: `192.168.1.1` → `192.168.1.254`
+
+**Broadcast Address**: gửi dữ liệu đến toàn bộ host trong mạng.
+
+Ví dụ: `192.168.1.255`
+### 2. Subnet mask
+Subnet Mask giống như một địa chỉ IP nhưng chỉ dành cho mục đích sử dụng nội bộ trong mạng.Router sử dụng subnet mask để định tuyến các gói dữ liệu đến đúng nơi. Subnet Mask không được chỉ động trong các gói dữ liệu truyền qua Internet bởi những gói này chỉ cho biết địa chỉ IP đích mà router sẽ khớp với subnet.
+### 3. Prefix
+ Prefix để chỉ định số lượng bit dành cho phần mạng trong địa chỉ IP, được sử dụng trong ký hiệu CIDR. Được viết dưới dạng /x, trong đó 'x' là số lượng bit mạng.
+
+ **Ví dụ**: Prefix /24 tương đương với Subnet Mask 255.255.255.0, nghĩa là 24 bit đầu tiên của địa chỉ IP là phần mạng. 
