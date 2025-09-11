@@ -49,3 +49,28 @@ Ví dụ:
 - Subnet mask: `255.255.255.0`
 → Network = `192.168.1.0/24`, Host có thể từ `192.168.1.1` → `192.168.1.254`.
 ### 3. Gói tin IPv4 (IPv4 Packet)
+#### 3.1. Header (tiêu đề – tối thiểu 20 byte)
+Chứa các thông tin điều khiển:
+- **Version**: phiên bản (IPv4 = 4).
+- **Header Length (IHL)**: độ dài header.
+- **Type of Service (DSCP/ToS)**: ưu tiên dịch vụ (QoS).
+- **Total Length**: tổng độ dài gói tin.
+- **Identification, Flags, Fragment Offset**: hỗ trợ phân mảnh gói tin.
+- **TTL (Time to Live)**: giới hạn số hop (router).
+- **Protocol**: giao thức lớp trên (TCP=6, UDP=17, ICMP=1...).
+- **Header Checksum**: kiểm tra lỗi header.
+- **Source Address**: địa chỉ IP nguồn.
+- **Destination Address**: địa chỉ IP đích.
+#### 3.2. Payload (dữ liệu)
+- Chứa dữ liệu của giao thức lớp trên (TCP segment, UDP datagram, ICMP, OSPF...).
+- Kích thước tối đa: **65.535 byte** (tính cả header).
+## V. Các lớp của IPv4
+Dựa vào cách chọn địa chỉ mạng mà địa chỉ IP được phân thành 5 lớp A, B, C, D, E. Đặc điểm của các lớp như sau:
+## Lớp A
+![alt text](../images/image1.jpg)
+Địa chỉ lớp A có phần mạng là 8 bit đầu và phần host là 24 bit sau. Bit đầu tiên của phần mạng luôn là 0.
+
+Lớp A sẽ có các địa chỉ mạng từ 1.0.0.0 đến 126.0.0.0 và mỗi mạng sẽ có 224 địa chỉ host (loại trừ địa chỉ mạng và địa chỉ broadcast).
+
+Mạng loopback sẽ là 127.0.0.0.
+## Lớp B
