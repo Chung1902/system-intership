@@ -24,3 +24,28 @@ IPv5 Là giao thức thử nghiệm có tên gọi Internet Stream Protocol (ST)
 Về cấu tạo, địa chỉ IPv4 sẽ có 32 bit và được biểu diễn thành một dãy số nhị phân và chia thành 4 cụm. Mỗi cụm như vậy sẽ gọi là octet. Mỗi octet sẽ là 8 bit và chúng được ngăn cách bằng dấu chấm `.`
 ![alt text](../images/image.jpg)
 ## IV. Các thành phần của IPv4
+### 1. Địa chỉ IPv4(IP Address)
+- Độ dài **32 bit** → biểu diễn bằng 4 số thập phân (0–255), ngăn cách bằng dấu chấm.
+Ví dụ: 192.168.1.10
+ - **Chức năng**: định danh thiết bị trong mạng, giống như “số nhà” để gửi dữ liệu đúng nơi.
+### Phân loại địa chỉ
+- **Public**: địa chỉ duy nhất trên Internet.
+
+- **Private**: dùng trong LAN (10.x.x.x, 172.16.x.x–172.31.x.x, 192.168.x.x).
+
+- **Loopback**: 127.0.0.1 (localhost).
+
+- **Broadcast**: gửi cho tất cả host trong mạng (VD: 192.168.1.255).
+
+- **Multicast**: gửi cho một nhóm host.
+### 2. Subnet Mask
+- Cũng là số 32 bit, đi kèm địa chỉ IPv4.
+
+- Dùng để chia địa chỉ IP thành **phần mạng (Network) và phần host (Host).**
+Ví dụ:
+
+- IP: `192.168.1.10`
+
+- Subnet mask: `255.255.255.0`
+→ Network = `192.168.1.0/24`, Host có thể từ `192.168.1.1` → `192.168.1.254`.
+### 3. Gói tin IPv4 (IPv4 Packet)
