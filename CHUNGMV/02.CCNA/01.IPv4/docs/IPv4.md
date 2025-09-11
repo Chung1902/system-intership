@@ -22,7 +22,7 @@ IPv5 Là giao thức thử nghiệm có tên gọi Internet Stream Protocol (ST)
 > Tóm lại: Tất cả các giao thức là phiên bản thử nghiệm không bao giờ triển khai
 ## III. Cấu trúc của IPv4
 Về cấu tạo, địa chỉ IPv4 sẽ có 32 bit và được biểu diễn thành một dãy số nhị phân và chia thành 4 cụm. Mỗi cụm như vậy sẽ gọi là octet. Mỗi octet sẽ là 8 bit và chúng được ngăn cách bằng dấu chấm `.`
-![alt text](../images/image.jpg)
+![alt text](../images/ipv4_structure.jpg)
 ## IV. Các thành phần của IPv4
 ### 1. Địa chỉ IPv4(IP Address)
 - Độ dài **32 bit** → biểu diễn bằng 4 số thập phân (0–255), ngăn cách bằng dấu chấm.
@@ -67,7 +67,7 @@ Chứa các thông tin điều khiển:
 ## V. Các lớp của IPv4
 Dựa vào cách chọn địa chỉ mạng mà địa chỉ IP được phân thành 5 lớp A, B, C, D, E. Đặc điểm của các lớp như sau:
 ## Lớp A
-![alt text](../images/image1.jpg)
+![alt text](../images/class_A.jpg)
 Địa chỉ lớp A có phần mạng là 8 bit đầu và phần host là 24 bit sau. Bit đầu tiên của phần mạng luôn là 0.
 
 Lớp A sẽ có các địa chỉ mạng từ 1.0.0.0 đến 126.0.0.0 và mỗi mạng sẽ có 224 địa chỉ host (loại trừ địa chỉ mạng và địa chỉ broadcast).
