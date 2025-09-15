@@ -82,4 +82,9 @@ Lớp này điều khiển luồng giao tiếp, quyết định xem hai ứng d�
  - **Lớp ứng dụng**: Nhập thông tin người dùng vào máy(hình ảnh, văn bản,...)
  - **Lớp trình bày**: Chuyển dữ liệu thành một dạng chung để mã hóa dữ liệu
  - **Lớp phiên**: Thiết lập, quản lý và đồng bộ phiên giao tiếp
- - **Lớp vận chuyển**: 
+ - **Lớp vận chuyển**: Chia dữ liệu thành các degment nhỏ hơn để dễ truyền. Đảm bảo dữ liệu đến đúng, không mất mát
+ - **Lớp mạng**: Thêm địa chỉ IP nguồn và IP đích. Tìm đường đi qua mạng.
+ - **Lớp liên kết dữ liệu**: Đóng gói packet thành frame. Gắn thêm địa chỉ MAC của card mạng(nguồn và đích). Kiểm tra lỗi và gửi frame qua LAN/WiFi/Ethernet.
+ - **Lớp vật lý**: Chuyển frame thành tín hiệu điện / sóng / ánh sáng. Truyền qua dây cáp, sóng Wi-Fi, cáp quang.
+ *Máy nhận*:
+ 
