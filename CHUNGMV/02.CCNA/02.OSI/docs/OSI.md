@@ -12,7 +12,7 @@ Mô hình OSI **(Open Systems Interconnection)** là một mô hình tham chiế
 **Trừu tượng hóa**: Chia quá trình truyền thông phức tạp thành các tầng nhỏ hơn, mỗi tầng có chức năng riêng biệt và các giao thức riêng. 
 
 **Giao tiếp**: Cung cấp một "ngôn ngữ chung" cho các hệ thống máy tính để giao tiếp hiệu quả qua mạng. 
-## Các tầng trong mô hình OSI
+## Các Layer trong mô hình OSI
 **Layer 1 – Physical Layer (Lớp vật lý)**
 1. **Khái niệm**: Lớp vật lý phương tiện truyền dẫn vật lý và các công nghệ để truyền dữ liệu qua phương tiện đó. Về cốt lõi, hoạt động truyền dữ liệu là việc truyền tín hiệu kỹ thuật số và điện tử thông qua các kênh vật lý khác nhau như cáp quang, cáp đồng và không khí.
 2. **Đặc điểm**: chịu trách nhiệm truyền các bit dữ liệu thô qua môi trường vật lý như cáp hoặc sóng vô tuyến.
