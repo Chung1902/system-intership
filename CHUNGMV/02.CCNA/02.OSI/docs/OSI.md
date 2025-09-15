@@ -86,5 +86,14 @@ Lớp này điều khiển luồng giao tiếp, quyết định xem hai ứng d�
  - **Lớp mạng**: Thêm địa chỉ IP nguồn và IP đích. Tìm đường đi qua mạng.
  - **Lớp liên kết dữ liệu**: Đóng gói packet thành frame. Gắn thêm địa chỉ MAC của card mạng(nguồn và đích). Kiểm tra lỗi và gửi frame qua LAN/WiFi/Ethernet.
  - **Lớp vật lý**: Chuyển frame thành tín hiệu điện / sóng / ánh sáng. Truyền qua dây cáp, sóng Wi-Fi, cáp quang.
+
  *Máy nhận*:
- 
+
+- **Lớp vật lý**: nhận tín hiệu và chuyển thành bit.
+- **Lớp liên kết dữ liệu**: ghép bit thành frame, kiểm tra MAC đích.
+- **Lớp mạng**: lấy packet, kiểm tra IP đích.
+- **Lớp vận chuyển**: ghép segment, kiểm tra lỗi, sắp xếp lại, chuyển cho đúng ứng dụng qua port.
+- **Lớp phiên**: khôi phục phiên làm việc.
+- **Lớp trình bày**: giải mã, giải nén, chuyển đổi định dạng dữ liệu.
+- **Lớp ứng dụng**: hiển thị dữ liệu cho người dùng (email, web, file…).
+![alt text](../images/WorkflowOSI.Jpg)
