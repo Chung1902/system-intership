@@ -51,11 +51,22 @@
 - **Giao tiếp với ứng dụng người dùng**: Tầng ứng dụng cung cấp giao diện cho phép người dùng và các ứng dụng giao tiếp với môi trường mạng.
 - **Định dạng và xử lý dữ liệu**: Dữ liệu ở tầng này được định dạng thành các luồng byte và chứa thông tin cần thiết để xác định đường dẫn chính xác của gói tin, đảm bảo giao tiếp thành công.
 ## So sánh với mô hình OSI
+`Giống nhau`
+- Đều là mô hình mạng phân tầng
+- Nguyên tắc đóng gói dữ liệu giống nhau
+- Mỗi lớp hoạt động độc lập, có thể thay đổi công nghệ bên trong mà không ảnh hưởng toàn bộ hệ thống.
+- Đều mô tả cách dữ liệu đi từ máy A sang máy B
+
+`Khác nhau`
 | |Mô hình OSI|Mô hình TCP/Ip|
 |-|-----------|--------------|
 |Số tầng|7 tầng|4 tầng|
 |Tính chất|Mô hình tham chiếu lý thuyết (chủ yếu dùng trong giảng dạy)|Bộ giao thức thực tế được sử dụng trên Internet|
 |Mức độ chi tiết|Chia nhỏ từng chức năng (Session, Presentation riêng)|Gộp nhiều chức năng vào tầng Application|
 |Địa chỉ sử dụng|- MAC Address (Data Link)<br>- IP Address (Network)<br>- Port (Transport)|- MAC Address (Link)<br>- IP Address (Internet)<br>- Port (Transport)|
-
+|Đơn vị dữ liệu|- Bits (Physical)<br>- Frame (Data Link)<br>- Packet (Network)<br>- Segment/Datagram (Transport)<br>- Data (các tầng trên)|- Frame (Link)<br>- Packet (Internet)<br>- Segment (TCP) / Datagram (UDP)<br>- Data (Application)<br>|
+|Thiết bị hoạt động|- Hub (Physical)<br>- Switch (Data Link)<br>- Router (Network)<br>- Gateway (Application)|- Switch (Link)<br>- Router (Internet)|
+|Ứng dụng|Dùng để nghiên cứu, học lý thuyết, chuẩn hoá|Dùng trực tiếp trong thực tế (Internet, LAN, WAN)|
+|Đơn vị nghiên cứu|ISO phát triển(1984)|ARPANET phát triển (1970s)|
+ 
 
