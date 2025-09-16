@@ -45,5 +45,17 @@
 ![alt text](../images/Transport.jpg)
 
 **Lớp 4: Lớp ứng dụng - Application**
+1. **Khái niệm**: là tầng cao nhất trong mô hình TCP/IP, chịu trách nhiệm giao tiếp trực tiếp với người dùng và các ứng dụng, cho phép các dịch vụ mạng như duyệt web (HTTP), gửi email (SMTP), và truyền tệp (FTP) hoạt động.
+2. **Đặc điểm**: cung cấp các dịch vụ mạng cho người dùng và ứng dụng thông qua các giao thức như HTTP, FTP, SMTP, SSH, v.v. Nó nằm ở lớp trên cùng của mô hình, chịu trách nhiệm cho việc trao đổi dữ liệu chuẩn hóa, xử lý các định dạng dữ liệu byte-to-byte và kết hợp thông tin định tuyến để đảm bảo các gói tin được gửi đến đích chính xác.
+3. **Chức năng**:
+- **Giao tiếp với ứng dụng người dùng**: Tầng ứng dụng cung cấp giao diện cho phép người dùng và các ứng dụng giao tiếp với môi trường mạng.
+- **Định dạng và xử lý dữ liệu**: Dữ liệu ở tầng này được định dạng thành các luồng byte và chứa thông tin cần thiết để xác định đường dẫn chính xác của gói tin, đảm bảo giao tiếp thành công.
+## So sánh với mô hình OSI
+| |Mô hình OSI|Mô hình TCP/Ip|
+|-|-----------|--------------|
+|Số tầng|7 tầng|4 tầng|
+|Tính chất|Mô hình tham chiếu lý thuyết (chủ yếu dùng trong giảng dạy)|Bộ giao thức thực tế được sử dụng trên Internet|
+|Mức độ chi tiết|Chia nhỏ từng chức năng (Session, Presentation riêng)|Gộp nhiều chức năng vào tầng Application|
+|Địa chỉ sử dụng|- MAC Address (Data Link)<br>- IP Address (Network)<br>- Port (Transport)|- MAC Address (Link)<br>- IP Address (Internet)<br>- Port (Transport)|
 
 
