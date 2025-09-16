@@ -1,7 +1,49 @@
 # Mô hình TCP/IP
 ## Mô hình TCP/IP là gì?
 **TCP/IP (Transmission Control Protocol/Internet Protocol)** là bộ giao thức truyền thông quan trọng và là nền tảng của mạng Internet, chịu trách nhiệm về việc kết nối các thiết bị và truyền tải dữ liệu hiệu quả. Bộ giao thức này hoạt động bằng cách chia nhỏ thông tin thành các gói dữ liệu, định tuyến chúng đến đúng địa chỉ đích, và đảm bảo chúng được tập hợp lại chính xác tại điểm nhận.
+
+![alt text](../images/TCPIPmodel.jpg)
+
 **Vai trò của các giao thức chính**:
 - **TCP (Transmission Control Protocol)**: Đảm bảo việc truyền dữ liệu đáng tin cậy và có thứ tự. TCP thiết lập kết nối giữa người gửi và người nhận, chia dữ liệu thành các gói, và đảm bảo chúng đến nơi đầy đủ, chính xác bằng cách phát hiện lỗi và yêu cầu truyền lại.
 - **IP (Internet Protocol)**: Chịu trách nhiệm định địa chỉ và định tuyến dữ liệu. Mỗi thiết bị trên mạng có một địa chỉ IP riêng, và IP sẽ xác định con đường hiệu quả nhất để các gói dữ liệu đi qua mạng đến đúng địa chỉ đích.
 ## Các Layer trong mô hình TCP/IP
+**Lớp 1: Lớp vật lý - Physical**
+1. **Khái niệm**: là tầng thấp nhất, chịu trách nhiệm truyền tín hiệu số thành các tín hiệu vật lý (như sóng điện, sóng quang) để truyền qua môi trường truyền dẫn (cáp, sóng vô tuyến) giữa các thiết bị trong cùng một mạng.
+2. **Đặc điểm**:
+- **Truyền tải dữ liệu ở dạng bit**: Đây là tầng thực hiện việc chuyển đổi dữ liệu thành các tín hiệu điện tử (bit) để truyền qua các phương tiện vật lý. 
+- **Tập trung vào kết nối vật lý**: Tầng này quy định các tiêu chuẩn vật lý cho mạng, bao gồm loại cáp, đầu nối, và các thông số kỹ thuật khác cần thiết để thiết lập kết nối giữa các thiết bị. 
+- **Sử dụng tín hiệu đồng bộ**: Các thiết bị ở hai đầu kết nối vật lý phải đồng ý về một quy ước tín hiệu để phân biệt các bit 0 và 1 một cách chính xác.
+- **Chịu trách nhiệm về phương tiện truyền dẫn**: Bao gồm cáp, sóng radio, hoặc quang học, và các công nghệ như Bluetooth, NFC, Ethernet.
+3. **Chức năng**:
+- **Định nghĩa đặc tính vật lý**: Xác định các tiêu chuẩn cho cáp, đầu nối, hiệu điện thế, tần số, và các thông số khác của kết nối vật lý.
+- **Đóng gói dữ liệu**: Chuyển đổi gói tin (packet) từ tầng Internet thành các khung (frame) để truyền đi trên mạng.
+- **Xử lý địa chỉ**: Chịu trách nhiệm sử dụng địa chỉ vật lý (MAC Address) để định danh và định tuyến dữ liệu đến các thiết bị cụ thể trong cùng mạng nội bộ.
+
+**Lớp 2: Lớp mạng - Internet**
+1. **Khái niệm**: Tầng mạng (Network Layer hay Internet Layer) trong mô hình TCP/IP chịu trách nhiệm định tuyến các gói tin (packet) từ nguồn đến đích bằng cách sử dụng Giao thức Internet (IP).
+2. **Đặc điểm**:
+- **Đóng gói dữ liệu**: Dữ liệu từ tầng trên được chia thành các gói tin (packet) với kích thước phù hợp với mạng.
+- **Định tuyến (Routing)**: Đây là chức năng cốt lõi, quyết định đường đi tốt nhất cho gói tin từ nguồn đến đích qua các mạng khác nhau.
+- **Kết nối các mạng**: Tầng mạng có nhiệm vụ liên kết các mạng độc lập, tạo thành một mạng lưới rộng lớn hơn (Internet).
+3. **Chức năng**:
+- **Đóng gói (Packetizing)**: Nhận dữ liệu từ tầng trên, đóng gói chúng thành các đơn vị dữ liệu gọi là gói tin (packet) và thêm một phần đầu (header) chứa thông tin định tuyến.
+- **Định địa chỉ (Addressing)**: Sử dụng địa chỉ IP để xác định duy nhất từng thiết bị trên mạng, giống như địa chỉ nhà.
+- **Xử lý lỗi (Error Handling)**: Giao thức ICMP được sử dụng trong tầng này để báo cáo lỗi và gửi thông báo liên quan đến các sự cố mạng.
+
+![alt text](../images/Internet.jpg)
+
+**Lớp 3: Lớp vận chuyển - Transport**
+1. **Khái niệm**: là tầng thứ ba, có vai trò xử lý giao tiếp đầu cuối giữa các ứng dụng trên các thiết bị khác nhau, sử dụng hai giao thức chính là TCP (đảm bảo độ tin cậy, thứ tự, sửa lỗi) và UDP (tốc độ cao, không đảm bảo tin cậy).
+2. **Đặc điểm**:
+- **Phân chia và gom nhóm dữ liệu**: Tầng này nhận dữ liệu từ tầng ứng dụng, chia nhỏ chúng thành các đoạn có kích thước phù hợp, mỗi đoạn có một header chứa thông tin điều khiển và dữ liệu cần truyền.
+- **Sử dụng các cổng (Ports)**: Để phân biệt các ứng dụng khác nhau trên cùng một thiết bị, tầng giao vận sử dụng các cổng TCP và UDP, cho phép nhiều ứng dụng cùng lúc sử dụng mạng.
+3. **Chức năng**:
+- **Kiểm soát luồng (Flow Control)**: Điều chỉnh tốc độ truyền dữ liệu để tránh làm quá tải các thiết bị nhận có kết nối chậm, đảm bảo quá trình truyền dữ liệu diễn ra hiệu quả.
+- **Kiểm soát lỗi (Error Control)**: Đảm bảo dữ liệu được nhận đầy đủ và đúng thứ tự. Nếu có lỗi hoặc gói tin bị mất, tầng này sẽ yêu cầu truyền lại để đảm bảo tính toàn vẹn của dữ liệu.
+
+![alt text](../images/Transport.jpg)
+
+**Lớp 4: Lớp ứng dụng - Application**
+
+
