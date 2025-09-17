@@ -41,9 +41,7 @@ Ví dụ: 192.168.1.10
 ### 2. Subnet Mask
 - Cũng là số 32 bit, đi kèm địa chỉ IPv4.
 
-- Dùng để chia địa chỉ IP thành **phần mạng (Network) và phần host (Host).**
-
-- IP: `192.168.1.10`
+- Dùng để chia địa chỉ IP thành **phần mạng (Network) và phần host (Host).** Ví dụ: IP: `192.168.1.10`
 
 - Subnet mask: `255.255.255.0`
 → Network = `192.168.1.0/24`, Host có thể từ `192.168.1.1` → `192.168.1.254`.
