@@ -149,7 +149,7 @@ Các subnet:
 
 ## VIII. Phân biệt multicast và broadcast
 ### 1. Địa chỉ Broadcast
-Địa chỉ Broadcast đại diện cho tất cả thiết bị trong một mạng LAN. Tức là các khung frames được gửi đến địa chỉ quảng bá sẽ được chuyển tiếp tới tất cả các thiết bị trong mạng LAN. Địa chỉ quảng bá có giá trị FFFF.FFFF.FFFF (tất cả đều là địa chỉ nhị phân). Bộ chuyển mạch sẽ gửi các Frames ra tất cả các cổng ngoại trừ cổng nhận.
+**Địa chỉ Broadcast** đại diện cho tất cả thiết bị trong một mạng LAN. Tức là các khung frames được gửi đến địa chỉ quảng bá sẽ được chuyển tiếp tới tất cả các thiết bị trong mạng LAN. Địa chỉ quảng bá có giá trị FFFF.FFFF.FFFF (tất cả đều là địa chỉ nhị phân). Bộ chuyển mạch sẽ gửi các Frames ra tất cả các cổng ngoại trừ cổng nhận.
 
 Địa chỉ Broadcast thường được sử dụng trong các ứng dụng yêu cầu DHCP hay ARP như truyền hình để phát tín hiệu âm thanh hoặc video.
 
