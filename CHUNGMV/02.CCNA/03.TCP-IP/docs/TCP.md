@@ -58,7 +58,7 @@
 - Đều mô tả cách dữ liệu đi từ máy A sang máy B
 
 `Khác nhau`
-| |Mô hình OSI|Mô hình TCP/Ip|
+| |Mô hình OSI|Mô hình TCP/IP|
 |-|-----------|--------------|
 |Số tầng|7 tầng|4 tầng|
 |Tính chất|Mô hình tham chiếu lý thuyết (chủ yếu dùng trong giảng dạy)|Bộ giao thức thực tế được sử dụng trên Internet|
