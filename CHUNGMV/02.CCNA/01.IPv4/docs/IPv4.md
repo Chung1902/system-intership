@@ -170,7 +170,7 @@ Một ví dụ về địa chỉ multicast Ethernet sẽ là 01:00:0C:CC:CC:CC ,
 |Độ trễ|Cao|Vừa phải|
 ## IX. Subnet, Subnet mask, Prefix
 ### 1. Subnet
-**Subnet** (Mạng con) là một phần nhỏ được tách ra từ mạng IP lớn bằng cách dùng Subnet Mask. Mục đíc nhằm quản lý địa chỉ IP hiệu quả hơn, giảm lãng phí, tăng tính bảo mật và hiệu suất.
+**Subnet** (Mạng con) là một phần nhỏ được tách ra từ mạng IP lớn bằng cách dùng Subnet Mask. Mục đích nhằm quản lý địa chỉ IP hiệu quả hơn, giảm lãng phí, tăng tính bảo mật và hiệu suất.
 
 Mỗi **Subnet** có 3 phần:
 
