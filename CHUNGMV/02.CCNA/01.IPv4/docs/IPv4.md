@@ -135,7 +135,7 @@ Sự khác biệt chính giữa địa chỉ IP công cộng và riêng tư là 
 
 - **Số host khả dụng** mỗi subnet++ = 2^h – 2 (h = số bit còn lại cho host; trừ 2 vì có Network + Broadcast).
 
-**Ví dụ minh hoạ**:Chia nhỏ `192.168.1.0/24` thành 4 subnet
+**Ví dụ minh hoạ**: Chia nhỏ `192.168.1.0/24` thành 4 subnet
 
 - Muốn có 4 subnet → cần 2^s ≥ 4 → mượn 2 bit từ phần host.
 - /24 + 2 = /26 → Subnet mask = 255.255.255.192.
