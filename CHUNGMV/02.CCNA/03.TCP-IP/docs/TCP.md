@@ -70,3 +70,18 @@
 |Đơn vị nghiên cứu|ISO phát triển(1984)|ARPANET phát triển (1970s)|
  
 
+## Workflow với mô hình TCP/IP (các bước khi mà A muốn gửi 1 thông tin đến B)
+
+`Máy gửi`
+
+- **Lớp Ứng dụng**: Chuẩn bị dữ liệu được tạo ra và chuyển xuống các lớp dưới.
+- **Lớp Giao vận**: Dữ liệu từ lớp ứng dụng được chia thành các segment (TCP) hoặc datagram (UDP) nhỏ hơn.
+- **Lớp Internet**: Mỗi gói tin của lớp giao vận được đóng gói lại thành một datagram, thêm địa chỉ IP nguồn và đích để định tuyến trên mạng. 
+- **Lớp vật lý**: Datagram được chuyển thành các frame và truyền qua phương tiện vật lý (như cáp Ethernet, Wi-Fi) đến thiết bị đích.
+
+`Máy nhận`
+
+- **Lớp vật lý**: Gói tin được nhận và chuyển thành dạng phù hợp để xử lý ở lớp trên.
+- **Lớp Internet**: Địa chỉ IP được kiểm tra để xác định gói tin đã đến đúng đích hay chưa.
+- **Lớp giao vận**: TCP (nếu dùng) kiểm tra số thứ tự để sắp xếp lại các segment, xác nhận dữ liệu có bị mất hay lỗi không, và yêu cầu gửi lại nếu cần.
+- **Lớp ứng dụng**: Dữ liệu hoàn chỉnh được ghép lại và chuyển đến ứng dụng tương ứng (ví dụ: trình duyệt web hiển thị nội dung).
