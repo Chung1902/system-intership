@@ -42,7 +42,6 @@ Ví dụ: 192.168.1.10
 - Cũng là số 32 bit, đi kèm địa chỉ IPv4.
 
 - Dùng để chia địa chỉ IP thành **phần mạng (Network) và phần host (Host).**
-Ví dụ:
 
 - IP: `192.168.1.10`
 
