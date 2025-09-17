@@ -133,7 +133,7 @@ Sự khác biệt chính giữa địa chỉ IP công cộng và riêng tư là 
 ### Công thức tính toán
 - **Số subnet** = 2^s (s = số bit mượn thêm từ phần host để chia mạng).
 
-- **Số host khả dụng mỗi subnet++ = 2^h – 2 (h = số bit còn lại cho host; trừ 2 vì có Network + Broadcast).
+- **Số host khả dụng** mỗi subnet++ = 2^h – 2 (h = số bit còn lại cho host; trừ 2 vì có Network + Broadcast).
 
 **Ví dụ minh hoạ**:Chia nhỏ `192.168.1.0/24` thành 4 subnet
 
