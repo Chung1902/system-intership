@@ -102,6 +102,7 @@ Lớp E từ `240` đến `255`.
 ## VI. Phân biệt IP Public và IP Private
 ### 1. IP Public
 IP Public `(hay địa chỉ IP công cộng)` là **địa chỉ IP duy nhất được nhà cung cấp dịch vụ Internet (ISP) gán cho thiết bị của bạn, cho phép thiết bị đó kết nối trực tiếp với Internet toàn cầu và giao tiếp với các máy chủ khác trên thế giới**. Địa chỉ IP Public đóng vai trò như "địa chỉ nhà" của thiết bị trên mạng Internet, giúp các thiết bị khác xác định và kết nối với nó. 
+
 ### 2. IP Private
 
 IP Private `(hay còn gọi là địa chỉ IP riêng)` là địa chỉ IP được sử dụng chỉ trong phạm vi một mạng nội bộ (LAN) như gia đình, văn phòng, hoặc trường học, giúp các thiết bị trong cùng mạng đó giao tiếp với nhau.
