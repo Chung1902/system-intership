@@ -47,7 +47,28 @@ Một request gồm 3 phần:
    ```
  - *Body*
    - Nội dung thực tế server trả về (HTML, JSON, hình ảnh…).
+## IV. URL
+**URL** là viết tắt của cụm từ Uniform Resource Locator (còn được gọi là địa chỉ web) được sử dụng để định vị và truy cập đến các tài nguyên trên Internet. Mỗi tài nguyên (trang web, hình ảnh, video, file, document,…) đều có 1 URL duy nhất để dẫn đến nó.
 
+![alt text](../images/URL.jpg)
 
+Cấu tạo của một URL như sau:
+```
+URL = scheme:[//authority]path[?query][#fragment]
+```
+Trong đó:
+- **Scheme**: chính là giao thức mạng sử dụng để truyền dẫn dữ liệu, các giao thức phổ biến mà chúng ta biết là http, https, ftp, mailto, irc…, phân cách giao thức với phần còn lại bằng ký tự `:`.
+- **authority** là phần tổ hợp bao gồm các phần nhỏ hơn
+
+```
+authority = [userinfo@]domain[:port]
+```
+
+  - **userinfo**: Thông tin người dùng bao gồm tên đăng nhập và mật khẩu, chỉ sử dụng với các URL được bảo mật cần đăng nhập.
+  - **domain**: tên miền của website là ánh xạ 1 – 1 từ một tên có thể nhớ sang địa chỉ IP của máy chủ web nơi chứa nội dung trang web.
+  - **port**: Số cổng sử dụng bởi giao thức trên máy chủ.
+- **path**: Đường dẫn đến nội dung trang web, đường dẫn này là đường dẫn trong nội bộ website, phân cách giữa thư mục cha và thư mục con bởi dấu gạch chéo (/).
+- **query**: là chuỗi truy vấn, chứa các thông tin theo cặp tên/giá trị được gửi đến máy chủ web, mỗi cặp này cách nhau bởi dấu `&`.
+- **fragment**: là các chỉ mục con của nội dung, được bắt đầu với dấu `#`.
 
 
