@@ -18,7 +18,7 @@
 ### VLAN là gì?
 VLAN(Virtual Local Area Network) hay còn gọi là mạng LAN ảo là mạng tùy chỉnh được hình thành từ một hoặc nhiều mạng LAN khác nhau, giúp các nhóm thiết bị có thể kết nối với một mạng dùng không đặt cùng nhau.
 
-![alt text](../images/VLAN.Jpg)
+![alt text](../imageS/VLAN.Jpg)
 
 ### Cách VLAN hoạt động
 VLAN hoạt động bằng cách gắn các **khung Ethernet** với một mã **VLAN (VLAN ID)**, xác định VLAN mà khung Ethernet thuộc về. Khi thiết bị gửi khung Ethernet, nó thêm mã VLAN vào khung. Khi khung Ethernet đến bộ chuyển mạch, bộ chuyển mạch đọc mã VLAN và chuyển khung đến cổng phù hợp với VLAN tương ứng.
