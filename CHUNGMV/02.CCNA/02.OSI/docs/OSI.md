@@ -96,4 +96,5 @@ Lớp này điều khiển luồng giao tiếp, quyết định xem hai ứng d�
 - **Lớp phiên**: khôi phục phiên làm việc.
 - **Lớp trình bày**: giải mã, giải nén, chuyển đổi định dạng dữ liệu.
 - **Lớp ứng dụng**: hiển thị dữ liệu cho người dùng (email, web, file…).
-![alt text](../images/WorkflowOSI.Jpg)
+
+![alt text](../images/workflow.jpg)
