@@ -69,7 +69,17 @@ Packet gặp phải tình trạng inject, tạo điều kiện cho các cuộc t
 - Khả năng tương tác có thể gặp khó khăn.
 Không thể chuyển tiếp lưu lượng mạng từ mạng VLAN này sang các VLAN khác.
 ### Ứng dụng của VLAN
-Phân chia mạng vật lý thành các mạng logic nhỏ hơn để tăng cường bảo mật, cải thiện hiệu suất mạng bằng cách giảm tắc nghẽn, tối ưu hóa việc sử dụng băng thông và đơn giản hóa việc quản lý mạng. VLAN được triển khai rộng rãi trong các doanh nghiệp, trường học và bệnh viện để cô lập dữ liệu nhạy cảm và cho phép các nhóm thiết bị giao tiếp với nhau một cách an toàn, hiệu quả bất kể vị trí vật lý của chúng. 
+Phân chia mạng vật lý thành các mạng logic nhỏ hơn để tăng cường bảo mật, cải thiện hiệu suất mạng bằng cách giảm tắc nghẽn, tối ưu hóa việc sử dụng băng thông và đơn giản hóa việc quản lý mạng. VLAN được triển khai rộng rãi trong các doanh nghiệp, trường học và bệnh viện để cô lập dữ liệu nhạy cảm và cho phép các nhóm thiết bị giao tiếp với nhau một cách an toàn, hiệu quả bất kể vị trí vật lý của chúng.
+
+- **Tăng cường bảo mật**
+  - *Phân tách dữ liệu*: VLAN giúp phân chia mạng thành các mạng logic riêng biệt, ngăn chặn việc truy cập trái phép giữa các phòng ban hoặc nhóm người dùng khác nhau. 
+  - *Hạn chế lây lan*: Bằng cách tạo ra các miền quảng bá (broadcast domain) riêng cho từng VLAN, VLAN có thể ngăn chặn sự lây lan của virus và các phần mềm độc hại trên toàn bộ mạng.
+- **Cải thiện hiệu suất mạng**
+  - *Giảm tắc nghẽn*: Khi mạng vật lý được chia thành các VLAN nhỏ hơn, lưu lượng truy cập sẽ được giới hạn trong từng VLAN, giúp giảm thiểu tình trạng tắc nghẽn mạng và tăng hiệu suất tổng thể. 
+  - *Tối ưu hóa băng thông*: Các VLAN riêng biệt không chia sẻ băng thông với nhau, do đó, việc sử dụng băng thông được tối ưu hóa hiệu quả hơn, đặc biệt cho các ứng dụng quan trọng.
+- **Quản lý mạng dễ dàng hơn**
+  - *Quản lý logic*: VLAN cho phép quản trị viên mạng quản lý và cấu hình các nhóm thiết bị một cách logic, bất kể chúng được kết nối với các bộ chuyển mạch khác nhau trong mạng vật lý. 
+  - *Linh hoạt di chuyển*: Việc chuyển một thiết bị từ VLAN này sang VLAN khác chỉ đơn giản là thay đổi cấu hình phần mềm trên cổng của bộ chuyển mạch, không yêu cầu thay đổi cấu trúc vật lý. 
 ### Sự khác biệt giữa mạng LAN và VLAN
 |**Tiêu chí so sánh**|**LAN (Local Area Network)**|**VLAN (Virtual Local Area Network)**|
 |----|--------|---------|
