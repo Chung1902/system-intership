@@ -22,6 +22,21 @@ IPv5 Là giao thức thử nghiệm có tên gọi Internet Stream Protocol (ST)
 > Tóm lại: Tất cả các giao thức là phiên bản thử nghiệm không bao giờ triển khai
 ## III. Cấu trúc của IPv4
 Về cấu tạo, địa chỉ IPv4 sẽ có 32 bit và được biểu diễn thành một dãy số nhị phân và chia thành 4 cụm. Mỗi cụm như vậy sẽ gọi là octet. Mỗi octet sẽ là 8 bit và chúng được ngăn cách bằng dấu chấm `.`
+
+**Lý do chia network và host**
+1. Quản lý định tuyến (Routing)
+- Router chỉ cần quan tâm NetID để biết đường đi.
+- Nếu không có phần mạng, router phải nhớ từng IP riêng lẻ → bảng định tuyến sẽ cực lớn và phức tạp.
+2. Đảm bảo không trùng địa chỉ
+- Trong cùng một mạng, HostID phải duy nhất → mỗi máy có một địa chỉ riêng.
+- NetworkID đảm bảo không nhầm lẫn giữa các mạng khác nhau.
+3. Giúp phân chia mạng con (Subnetting)
+- Tách một mạng lớn thành nhiều mạng nhỏ → dễ quản lý, tăng bảo mật, giảm broadcast.
+- Ví dụ: 192.168.1.0/24 chia thành 4 subnet /26, mỗi subnet quản lý 64 host.
+4. Hỗ trợ mở rộng (Scalability)
+- Có thể thiết kế hệ thống từ nhỏ (vài host) đến cực lớn (hàng nghìn host).
+- Nếu chỉ có một dải liên tục 32 bit mà không chia, việc cấp phát và định tuyến toàn cầu sẽ hỗn loạn.
+
 ![alt text](../images/ipv4_structure.jpg)
 ## IV. Các thành phần của IPv4
 ### 1. Địa chỉ IPv4(IP Address)
@@ -68,7 +83,7 @@ Dựa vào cách chọn địa chỉ mạng mà địa chỉ IP được phân t
 
 Địa chỉ lớp A có phần mạng là 8 bit đầu và phần host là 24 bit sau. Bit đầu tiên của phần mạng luôn là 0.
 
-Lớp A sẽ có các địa chỉ mạng từ `1.0.0.0`đến `126.0.0.0` và mỗi mạng sẽ có 224 địa chỉ host (loại trừ địa chỉ mạng và địa chỉ broadcast).
+Lớp A sẽ có các địa chỉ mạng từ `0.0.0.0`đến `127.255.255.255` và mỗi mạng sẽ có 224 địa chỉ host (loại trừ địa chỉ mạng và địa chỉ broadcast).
 
 Mạng loopback sẽ là `127.0.0.0`.
 ## Lớp B
@@ -76,17 +91,24 @@ Mạng loopback sẽ là `127.0.0.0`.
 
 Địa chỉ lớp B có phần mạng là 16 bit đầu và phần host là 16 bit sau. 2 bit đầu tiên của phần mạng luôn là 1.0.
 
-Lớp B sẽ có các địa chỉ mạng từ `128.0.0.0` đến `191.255.0.0` và mỗi mạng sẽ có 214 địa chỉ host (loại trừ địa chỉ mạng và địa chỉ broadcast).
+Lớp B sẽ có các địa chỉ mạng từ `128.0.0.0` đến `191.255.255.255` và mỗi mạng sẽ có 214 địa chỉ host (loại trừ địa chỉ mạng và địa chỉ broadcast).
 ## Lớp C
 ![alt text](../images/class_C.jpg)
 
 Địa chỉ lớp C có phần mạng là 24 bit đầu và phần host là 8 bit sau. 3 bit đầu tiên của phần mạng luôn là `1.1.0`.
 
-Lớp C sẽ có các địa chỉ mạng từ `192.0.0.0` đến `223.255.255.0` và mỗi mạng sẽ có 26 địa chỉ host (loại trừ địa chỉ mạng và địa chỉ broadcast).
+Lớp C sẽ có các địa chỉ mạng từ `192.0.0.0` đến `223.255.255.255` và mỗi mạng sẽ có 26 địa chỉ host (loại trừ địa chỉ mạng và địa chỉ broadcast).
 ## Lớp D
 Các địa chỉ trong lớp D là những địa chỉ multicast bao gồm `224.0.0.0` đến `239.255.255.255`.
 ## Lớp E
 Các địa chỉ trong lớp E có vai trò dùng để dự phòng, bao gồm những địa chỉ từ `240.0.0.0` trở đi.
+
+Ví dụ:
+- 111.0.0.10->octec đầu tiên là 111(nằm trong dải 0-127)-> lớp A
+- 190.168.1.1-> octec đầu tiền là 190(nằm rong dải 128-191)-> lớp B
+- 222.192.1.1-> octec đầu tiên là 222(nằm trong dải 192-223)-> lớp C
+- 230.1.1.1-> octec đầu là 230(nằm trong dải 224-239)->là địa chỉ multicast thuộc lớp D
+- 250.1.1.1-> octec đầu tiên là 250(nằm trong dải 240-255)-> là địa chỉ có vai trò dự phòng thuộc lớp E
 ## chú ý
 Các host chỉ có thể sử dụng địa chỉ IP trong 3 lớp A, B, C. Để biết địa chỉ nằm trong lớp nào, ta sẽ xem số đầu tiên trong địa chỉ IP để biết dựa vào các khoảng sau:
 
