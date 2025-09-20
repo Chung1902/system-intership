@@ -53,7 +53,7 @@ d, 10.0.0.0/8 mượn 18 bit.
 |10.255.255.192/26|10.255.255.193-10.255.255.254|10.255.255.255|
 
 3. Cho mạng 172.16.5.0/24. Hãy chia nhỏ sao cho phù hợp với sơ đồ sau:
-![alt text](image.png)
+![alt text](../images/EX.jpg)
 
 - Cho mạng 78 host
   - Công thức: 2^m - 2 >= 79 => m = 7 (7 bit phần host)
