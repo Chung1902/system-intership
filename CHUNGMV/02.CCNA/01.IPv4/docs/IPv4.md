@@ -52,7 +52,7 @@ Ví dụ: 192.168.1.10
 
 - **Broadcast**: gửi cho tất cả host trong mạng (VD: 192.168.1.255).
 
-- **Multicast**: gửi cho một nhóm host.
+- **Multicast**: gửi cho một nhóm host d(ải 224.0.0.0 – 239.255.255.255)
 ### 2. Subnet Mask
 - Cũng là số 32 bit, đi kèm địa chỉ IPv4.
 
@@ -83,25 +83,33 @@ Dựa vào cách chọn địa chỉ mạng mà địa chỉ IP được phân t
 
 Địa chỉ lớp A có phần mạng là 8 bit đầu và phần host là 24 bit sau. Bit đầu tiên của phần mạng luôn là 0.
 
-Lớp A sẽ có các địa chỉ mạng từ `0.0.0.0`đến `127.255.255.255` và mỗi mạng sẽ có 224 địa chỉ host (loại trừ địa chỉ mạng và địa chỉ broadcast).
+Lớp A sẽ có các địa chỉ mạng từ `0.0.0.0`đến `127.255.255.255` và mỗi mạng sẽ có 224 địa chỉ host (loại trừ địa chỉ mạng và địa chỉ broadcast). Mạng loopback sẽ là `127.0.0.0`.
 
-Mạng loopback sẽ là `127.0.0.0`.
+Được thiết kế cho các tổ chức lớn với số lượng host nhiều (ISP, doanh nghiệp toàn cầu).
 ## Lớp B
 ![alt text](../images/class_B.jpg)
 
 Địa chỉ lớp B có phần mạng là 16 bit đầu và phần host là 16 bit sau. 2 bit đầu tiên của phần mạng luôn là 1.0.
 
 Lớp B sẽ có các địa chỉ mạng từ `128.0.0.0` đến `191.255.255.255` và mỗi mạng sẽ có 214 địa chỉ host (loại trừ địa chỉ mạng và địa chỉ broadcast).
+
+Dành cho các tổ chức vừa và lớn như trường đại học, doanh nghiệp vừa.
 ## Lớp C
 ![alt text](../images/class_C.jpg)
 
 Địa chỉ lớp C có phần mạng là 24 bit đầu và phần host là 8 bit sau. 3 bit đầu tiên của phần mạng luôn là `1.1.0`.
 
 Lớp C sẽ có các địa chỉ mạng từ `192.0.0.0` đến `223.255.255.255` và mỗi mạng sẽ có 26 địa chỉ host (loại trừ địa chỉ mạng và địa chỉ broadcast).
+
+Phục vụ các mạng nhỏ như văn phòng, tổ chức nhỏ, mạng gia đình.
 ## Lớp D
 Các địa chỉ trong lớp D là những địa chỉ multicast bao gồm `224.0.0.0` đến `239.255.255.255`.
+
+Dùng cho truyền thông multicast, tức là gửi dữ liệu đến một nhóm máy tính cụ thể.
 ## Lớp E
 Các địa chỉ trong lớp E có vai trò dùng để dự phòng, bao gồm những địa chỉ từ `240.0.0.0` trở đi.
+
+Được dành riêng cho nghiên cứu hoặc sử dụng trong tương lai, không được sử dụng công khai.
 
 Ví dụ:
 - 111.0.0.10->octec đầu tiên là 111(nằm trong dải 0-127)-> lớp A
