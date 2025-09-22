@@ -85,3 +85,54 @@
 - **Lớp Internet**: Địa chỉ IP được kiểm tra để xác định gói tin đã đến đúng đích hay chưa.
 - **Lớp giao vận**: TCP (nếu dùng) kiểm tra số thứ tự để sắp xếp lại các segment, xác nhận dữ liệu có bị mất hay lỗi không, và yêu cầu gửi lại nếu cần.
 - **Lớp ứng dụng**: Dữ liệu hoàn chỉnh được ghép lại và chuyển đến ứng dụng tương ứng (ví dụ: trình duyệt web hiển thị nội dung).
+## Tìm hiểu về giao thức TCP/UDP và so sánh giữa chúng
+I. Giao thức TCP
+1. TCP (Tranmission Control Protocol) là giao thức truyền tải hướng kết nối (connection-oriented), nghĩa là phải thực hiện thiết lập kết nối với đầu xa trước khi thực hiện truyền dữ liệu. Tiến trình thiết lập kết nối ở TCP được gọi là tiến trình bắt tay 3 bước (threeway handshake).
+2. Cấu trúc TCP header: bao gồm 10 trường chính với tổng cộng 20 byte bắt buộc.
+
+Chi tiết các trường trong TCP Header:
+
+|**Tên trường TCP**|**Chức năng**|
+|------------------|-------------|
+|Cổng nguồn (Source Port)|Xác định số cổng của ứng dụng gửi dữ liệu. |
+|Cổng đích (Destination Port)|Xác định số cổng của ứng dụng nhận dữ liệu. |
+|Số thứ tự (Sequence Number)|Dùng để đánh số thứ tự các byte dữ liệu, giúp xác định thứ tự truyền và tính ra tổng số byte đã được truyền.|
+|Số xác nhận (Acknowledgment Number)|Xác nhận đã nhận được gói tin nào và thông báo byte nào được mong đợi tiếp theo.|
+|Độ dài tiêu đề (Data Offset / Header Length)|Cho biết độ dài của toàn bộ phần TCP Header, tính bằng đơn vị word (1 word = 4 byte).|
+|Trường dự phòng (Reserved)|Luôn được thiết lập bằng 0 và có thể được sử dụng trong tương lai.|
+3. Quá trình bắt tay 3 bước
+
+![alt text](../images/workflowTCP.jpg)
+
+Giả sử host A muốn truyền dữ liệu cho host B thông qua một kết nối TCP. Trước khi thực hiện truyền , host A cần phải thiết lập kết nối TCP với host B việc này được tiến hành thông qua quá trình bắt tay 3 bước như sau:
+- Bước 1: Host A gửi cho B một gói tin có cờ SYN được bật lên, với số thứ tự được đánh là 100. Segment đầu tiên này không chứa phần dữ liệu nên không có phần data, tuy nhiên số lượng byte dữ liệu vẫn được tính là một byte cho hoạt động gửi cờ SYN.
+- Bước 2: Host B nhận được gói tin thì B gửi lại gói tin có cờ SYN được bật lên, kèm theo đó là cờ ACK để xác nhận.
+- Bước 3: Sau khi kết nối đã được thiết lập thì A gửi lại gói tin để đáp ứng nhu cầu của B.
+
+Sau khi 3 bước được hoàn tất , kết nối TCP được thiết lập giữa host A và B, lúc này 2 host đã có thể truyền dữ liệu được với nhau.
+
+II. Giao thức UDP
+ 1. UDP (User Datagram Protocol)là giao thức truyền tải hướng không kết nối (connectionless). Nó sẽ không thực hiện thao tác xây dựng kết nối trước khi truyền dữ liệu mà thực hiện truyền ngay lập tức khi có dữ liệu cần truyền (kiểu truyền best effort) => truyền tải rất nhanh cho dữ liệu của lớp ứng dụng.
+ 2. Cấu trúc UDP header: UDP gói các datagram bằng một tiêu đề UDP, chứa bốn trường, tổng cộng là tám byte.
+
+ |**Tên trường UDP**|**Chức năng**|
+ |------------------|-------------|
+ |Cổng nguồn (Source Port)|Xác định số cổng của ứng dụng hoặc dịch vụ gửi gói tin.|
+ |Cổng đích (Destination Port)|Xác định số cổng của ứng dụng hoặc dịch vụ nhận gói tin.|
+ |Độ dài (Length)|Chỉ định tổng chiều dài của toàn bộ datagram, bao gồm cả phần header (tiêu đề) và phần dữ liệu tải trọng (payload).|
+ |Checksum (Kiểm tra tổng)|Cung cấp tính năng kiểm tra lỗi để đảm bảo tính toàn vẹn của tiêu đề và dữ liệu của gói tin.|
+
+ III. So sánh UDP và TCP
+ - **GIống nhau**: đều là các giao thức mạng TCP/IP, có chức năng kết nối các máy lại với nhau và có thể gửi dữ liệu cho nhau….
+- Khác nhau
+
+|TCP|UDP|
+|---|---|
+|Hướng kết nối|Hướng không kết nối|
+|Độ tin cậy cao|Độ tin cậy thấp|
+|Gửi dữ liệu dạng luồng byte|Gửi đi Datagram|
+|Không cho phép mất gói tin|Cho phép mất gói tin
+|Đảm bảo việc truyền dữ liệu|Không đảm bảo việc truyền dữ liệu
+|Có sắp xếp thứ tự các gói tin|Không sắp xếp thứ tự các gói tin
+|Tốc độ truyền thấp hơn UDP|Tốc độ truyền cao|
+![alt text](../images/TCP-UDP.jpg)
