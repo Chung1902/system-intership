@@ -1,8 +1,8 @@
 # Tìm hiểu về IPv4
 ## I. IPv4 là gì?
-**IPv4 (Internet Protocol version 4)** là giao thức Internet phiên bản 4. Đây là giao thức mạng phổ biến nhất hiện nay.
+**IPv4 (Internet Protocol version 4)** là một giao thức định tuyến trong mô hình TCP/IP, dùng để gán địa chỉ duy nhất cho từng thiết bị trong mạng. Mỗi thiết bị khi tham gia mạng IPv4 sẽ được gán một địa chỉ IP có độ dài 32 bit (tương đương 4 byte). Địa chỉ IPv4 thường được biểu diễn theo dạng thập phân có dấu chấm, gồm 4 số (mỗi số từ 0–255).
 
-Nó dùng **địa chỉ IP dài 32-bit**, được biểu diễn dưới dạng chuỗi số và chia thành các nhóm được ngăn cách bằng dấu chấm. `Ví dụ: 192.168.0.1`
+ Ví dụ: 192.168.1.1 
 ## II. Tại sao lại không có IPv1,v2,v3,v5
 ### 1. IPv1
 Xuất hiện cuối thập niên 1970 trong các bản phác thảo ban đầu của giao thức Internet Protocol.
