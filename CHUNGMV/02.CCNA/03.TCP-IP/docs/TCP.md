@@ -124,7 +124,7 @@ II. Giao thức UDP
 
  III. So sánh UDP và TCP
  - **GIống nhau**: đều là các giao thức mạng TCP/IP, có chức năng kết nối các máy lại với nhau và có thể gửi dữ liệu cho nhau….
-- Khác nhau
+- **Khác nhau**
 
 |TCP|UDP|
 |---|---|
