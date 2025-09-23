@@ -142,3 +142,25 @@ VTP cho phép các switch trao đổi thông tin về VLAN và đồng bộ cấ
   - Vẫn chuyển tiếp thông tin VTP đi qua các trunk.
 
 II. **STP (Spanning Tree Protocol)**
+
+1. Định nghĩa
+- STP là giao thức giúp loại bỏ vòng lặp (loop) trong mạng chuyển mạch.
+- Khi ta kết nối các switch theo dạng dự phòng (redundant links) → rất dễ tạo loop Layer 2, gây broadcast storm → STP sinh ra để giải quyết.
+
+2. Nguyên lý hoạt động
+
+STP sử dụng thuật toán Spanning Tree Algorithm (STA) để xác định đường đi tối ưu, dựa trên: Election of Root Bridge (Chọn Root Bridge), Port Roles (Vai trò cổng), Path Cost (Chi phí đường truyền) với các bước:
+- Bước 1: Chọn Root Bridge (Cầu Gốc):
+Tất cả các Switch gửi BPDU (Bridge Protocol Data Unit) để bầu chọn Root Bridge.
+  - Switch có Bridge ID (Priority + MAC Address) nhỏ nhất sẽ trở thành Root Bridge.
+  - Bridge ID = Bridge Priority + MAC Address.
+ Bước 2: Xác định Root Port (RP) trên mỗi Switch:
+  - Root Port là cổng có đường đi ngắn nhất đến Root Bridge. Nếu có 2 đường đến Root Bridge, đường có chi phí nhỏ hơn sẽ được chọn làm Root Port.
+  - Tính Path Cost (Chi phí đường truyền) dựa trên tốc độ cổng: 10 Mbps = 100, 100 Mbps = 19, 1 Gbps = 4, 10 Gbps = 2.
+  - Nếu 2 cổng bằng nhau, thì cổng nào đấu với cổng có BID nhỏ hơn sẽ trở thành root port.
+- Bước 3: Xác định Designated Port (DP)
+  - Designated Port là cổng trên mỗi segment chịu trách nhiệm chuyển tiếp gói tin.
+  - Trên mỗi đường truyền, Switch nào có đường đi ngắn hơn đến Root Bridge sẽ có Designated Port.
+- Bước 4: Xác định Blocked Port (BP)
+  - Cổng nào không phải Root Port hoặc Designated Port sẽ bị chặn (Blocking).
+  - Cổng bị chặn vẫn lắng nghe BPDU để có thể kích hoạt lại nếu mạng bị lỗi.
