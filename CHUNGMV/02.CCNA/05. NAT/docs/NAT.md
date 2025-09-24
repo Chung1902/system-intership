@@ -24,6 +24,36 @@ NAT (Network Address Translation) là công nghệ dịch địa chỉ mạng, c
 
 **NAT (Network Address Translation)** trong mạng có thể được phân loại thành 3 loại chính dựa trên cách thức thực hiện chuyển đổi địa chỉ IP:
 - **Static NAT (NAT tĩnh):** Đây là loại NAT cơ bản nhất và thường được sử dụng để chuyển đổi một địa chỉ IP tĩnh trong mạng cục bộ sang một địa chỉ IP công cộng. Trong quá trình chuyển đổi, một địa chỉ IP tĩnh được ánh xạ với một địa chỉ IP công cộng, giúp thiết lập kết nối đến những thiết bị trong mạng cục bộ từ bên ngoài mạng.
+  - Ưu điểm: Kết nối ổn định và cố định, hỗ trợ truy cập từ Internet vào LAN, dễ quản lý, không thay đổi địa chỉ
+  - Nhược điểm: Lãng phí địa chỉ Public IP, không tăng bảo mật, không phù hợp cho người dùng cuối, khó mở rộng
 - **Dynamic NAT (NAT động):** Đây là loại NAT phổ biến được sử dụng để chuyển đổi một địa chỉ IP động trong mạng cục bộ sang một địa chỉ IP công cộng. Trong quá trình chuyển đổi, NAT sẽ tạo ra một bảng ánh xạ động giữa những địa chỉ IP tĩnh và địa chỉ IP công cộng, cho phép những thiết bị trong mạng cục bộ chia sẻ cùng một địa chỉ IP công cộng.
+  - Ưu điểm: Tiết kiệm công cấu hình, tận dụng tốt Public IP, thích hợp cho môi trường có nhiều máy nhưng không hoạt động cùng lúc
+  - Nhược điểm: Không đảm bảo Public IP cố định cho mỗi thiết bị, Cần nhiều Public IP hơn so với PAT (NAT Overload).
 - **Port Address Translation (PAT):** Đây là loại NAT phức tạp nhất và cũng là loại NAT phổ biến nhất. PAT cho phép chuyển đổi nhiều địa chỉ IP trong mạng cục bộ sang một địa chỉ IP công cộng thông qua nhiều cổng khác nhau. Mỗi kết nối từ những thiết bị trong mạng cục bộ được định tuyến thông qua một cổng duy nhất trên địa chỉ IP công cộng, giúp tiết kiệm địa chỉ IP công cộng và tăng cường bảo mật của mạng.
+  - Ưu điểm: Tiết kiệm địa chỉ IP Public tối đa, Phổ biến nhất, dễ triển khai, Tăng tính bảo mật
+  - Nhược điểm: Giới hạn số lượng kết nối đồng thời, Khó khăn cho một số ứng dụng, Không phù hợp cho dịch vụ công khai.
+## Ưu và nhược điểm cùa NAT
+- **Ưu điểm:**
+  - **Bảo mật tốt hơn:** NAT có khả năng ẩn IP nội bộ khỏi các IP công cộng. Điều này hữu ích để năng chặn các cuộc tấn công nhắm vào địa chỉ IP hoặc ngăn chặn các thiết bị nội bộ truy cập các trang web độc hại không mong muốn.
+  - **Tốc độ tốt hơn:** NAT có thể giúp cải thiện tốc độ liên lạc bằng cách giảm số lượng gói tin cần định tuyến.
+  - **Tính linh hoạt:** NAT mang lại sự linh hoạt cho các tổ chức muốn thay đổi cấu hình mạng mà không thay đổi địa chỉ IP.
+  - **Tiết kiệm địa chỉ IP:** Một số nhà cung cấp dịch vụ internet (ISP) quy định một số lượng IP hạn chế. Do đó, NAT là lựa chọn tối ưu giúp tiết kiệm không gian địa chỉ IP bằng cách cho phép nhiều thiết bị chia sẻ một địa chỉ IP duy nhất.
+  - **Tiết kiệm chi phí:** Việc giảm địa chỉ IP sẽ giúp tổ chức tiết kiệm tiền mua giấy phép địa chỉ IP và chi phí liên quan khác.
+  - **Quản trị mạng dễ dàng hơn:** Số lượng địa chỉ IP ít đồng nghĩa với việc quản lý dễ dàng hơn giúp tiết kiệm thời gian và công sức cho việc quản lý hệ thống mạng.
+- **Nhược điểm:**
+  - **Tăng độ phức tạp của mạng:** NAT có thể gây ra sự cố tương thích với một số loại thiết bị và phần mềm mạng bởi việc chuyển đổi IP riêng thành IP công cộng và ngược lại là một vấn đề đau đầu. Hơn nữa NAT cũng có thể cản trở một số loại ứng dụng mạng nhất định như VoIP, hội nghị truyền hình, ứng dụng yêu cầu kết nối trực tiếp,…
+  - **Hạn chế kết nối:** NAT có thể giới hạn việc thiết lập một số loại kết nối nhất định. Ngoài ra, nó còn có thể giao tiếp với các biện pháp an ninh mạng như tường lửa, hệ thống phát hiện xâm nhập nên có thể gây che khuất nguồn và đích thực sự của lưu lượng mạng. Điều này làm cho việc xác định và giải quyết các mối đe dọa bảo mật trở nên khó khăn hơn.
+  - **Thiếu kết nối đầu cuối:** NAT có thể chặn các kết nối đầu cuối giữa các thiết bị bởi vì độ trễ ngày càng tăng do quá trình xử lý trong việc chuyển đổi IP riêng tư sang công khai và ngược lại.
+  - **Khó khăn trong việc xác thực địa chỉ IP:** NAT có thể khiến việc xác thực địa chỉ IP trở nên khó khăn vì nhiều thiết bị trên mạng riêng chia sẻ cùng một địa chỉ IP công cộng nên việc xác định từng thiết bị riêng lẻ có thể gặp khó khăn.
+## Cơ chế hoạt động của NAT
+Các bước chính trong quá trình hoạt động của NAT:
+- **Gói tin từ mạng nội bộ:** Khi một thiết bị (ví dụ: máy tính, điện thoại) trong mạng nội bộ muốn truy cập Internet, nó sẽ tạo ra một gói tin chứa địa chỉ IP riêng của nó (IP Private) làm địa chỉ IP nguồn.
+- **Gói tin đến bộ định tuyến NAT:** Gói tin này sẽ được gửi đến bộ định tuyến có chức năng NAT.
+- **Chuyển đổi địa chỉ IP nguồn:** Bộ định tuyến NAT sẽ thay thế địa chỉ IP nguồn Private của thiết bị nội bộ bằng địa chỉ IP công cộng (IP Public) của chính bộ định tuyến.
+- **Lưu thông tin vào bảng NAT:** Đồng thời, bộ định tuyến sẽ ghi lại cặp địa chỉ IP nguồn Private và địa chỉ IP công cộng vào bảng NAT để sử dụng cho các gói tin phản hồi sau này.
+- **Gửi gói tin ra Internet:** Gói tin đã được chuyển đổi địa chỉ sẽ được gửi đến máy chủ đích trên Internet.
+- **Nhận phản hồi từ Internet:** Khi máy chủ đích gửi phản hồi, nó sẽ gửi gói tin đến địa chỉ IP công cộng của bộ định tuyến NAT.
+- **Chuyển đổi ngược lại:** Bộ định tuyến NAT sẽ tra cứu trong bảng NAT, tìm địa chỉ IP nguồn Private tương ứng với địa chỉ IP công cộng đó và chuyển đổi lại địa chỉ IP nguồn của gói tin.
+- Chuyển gói tin đến thiết bị nội bộ:** Cuối cùng, gói tin đã được dịch ngược sẽ được chuyển đến đúng thiết bị trong mạng nội bộ đã gửi yêu cầu ban đầu.
+
 
