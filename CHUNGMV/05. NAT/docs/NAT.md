@@ -133,6 +133,6 @@ Các bước chính trong quá trình hoạt động của NAT:
 - **Gửi gói tin ra Internet:** Gói tin đã được chuyển đổi địa chỉ sẽ được gửi đến máy chủ đích trên Internet.
 - **Nhận phản hồi từ Internet:** Khi máy chủ đích gửi phản hồi, nó sẽ gửi gói tin đến địa chỉ IP công cộng của bộ định tuyến NAT.
 - **Chuyển đổi ngược lại:** Bộ định tuyến NAT sẽ tra cứu trong bảng NAT, tìm địa chỉ IP nguồn Private tương ứng với địa chỉ IP công cộng đó và chuyển đổi lại địa chỉ IP nguồn của gói tin.
-- Chuyển gói tin đến thiết bị nội bộ:** Cuối cùng, gói tin đã được dịch ngược sẽ được chuyển đến đúng thiết bị trong mạng nội bộ đã gửi yêu cầu ban đầu.
+- **Chuyển gói tin đến thiết bị nội bộ:** Cuối cùng, gói tin đã được dịch ngược sẽ được chuyển đến đúng thiết bị trong mạng nội bộ đã gửi yêu cầu ban đầu.
 
 
